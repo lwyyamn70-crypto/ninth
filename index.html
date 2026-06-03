@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>منصة قوانين الشهادة الإعدادية 2026</title>
+<style>
+    :root {
+        --bg-main: #f8fafc;
+        --royal-navy: #0f172a;
+        --math-blue: #2563eb;
+        --card-white: #ffffff;
+        --text-dark: #1e293b;
+        --border-color: #cbd5e1;
+        --success-green: #10b981;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { background-color: var(--bg-main); color: var(--text-dark); line-height: 1.8; padding: 20px 10px; }
+
+    .yamen-banner {
+        background: linear-gradient(135deg, #0f172a, #1e3a8a);
+        color: #ffb703;
+        text-align: center;
+        padding: 20px 15px;
+        font-size: 1.4rem;
+        font-weight: bold;
+        border-radius: 12px;
+        margin-bottom: 25px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+    .yamen-banner span { display: block; font-size: 0.95rem; color: #cbd5e1; margin-top: 5px; }
+
+    header {
+        background-color: var(--royal-navy);
+        color: white;
+        padding: 30px 20px;
+        text-align: center;
+        border-radius: 12px;
+        margin-bottom: 30px;
+    }
+    header h1 { font-size: 1.8rem; margin-bottom: 8px; }
+    header p { font-size: 1.1rem; color: #93c5fd; }
+
+    .container { max-width: 850px; margin: 0 auto; }
+    .laws-list { list-style: none; }
+    
+    .law-item {
+        background-color: var(--card-white);
+        border-radius: 12px;
+        padding: 22px;
+        margin-bottom: 20px;
+        border-right: 6px solid var(--math-blue);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        font-size: 1.15rem;
+    }
+    
+    .law-item strong { color: var(--royal-navy); }
+    .example-box { background-color: #f1f5f9; padding: 10px; border-radius: 6px; margin: 10px 0; font-weight: bold; }
+
+    /* صندوق الأسئلة المضاف والمصحح */
+    .quiz-box {
+        background-color: #f0fdf4;
+        border: 1px solid #bbf7d0;
+        border-radius: 8px;
+        padding: 15px;
+        margin-top: 15px;
+    }
+    .quiz-title { color: #166534; font-weight: bold; margin-bottom: 8px; display: flex; align-items: center; gap: 5px; }
+    .quiz-options { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
+    .quiz-btn {
+        background-color: white;
+        border: 1px solid #cbd5e1;
+        padding: 10px 15px;
+        border-radius: 6px;
+        text-align: right;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 600;
+        transition: all 0.2s;
+    }
+    .quiz-btn:hover { border-color: var(--math-blue); background-color: #f8fafc; }
+    .answer-box { margin-top: 10px; padding: 10px; border-radius: 6px; font-weight: bold; display: none; }
+
+    footer {
+        text-align: center;
+        padding: 30px 20px;
+        margin-top: 40px;
+        border-top: 2px solid var(--border-color);
+        color: #64748b;
+        font-size: 1.1rem;
+    }
+</style>
+</head>
+<body>
+
+    <div class="yamen-banner">
+        ⚙️ تطوير وتنظيم وإعداد: يامن ⚙️
+        <span>المراجعة الشاملة والمنظمة لطلاب الشهادة الإعدادية - الامتحانات النهائية 2026</span>
+    </div>
+
+    <header>
+        <h1>💥 #طلبة_الشهادة_الإعدادية </h1>
+        <p>🔥 #قريبا__فى_الامتحان_النهائي_2026🔥</p>
+    </header>
+
+    <div class="container">
+        <ul class="laws-list">
+            
+            <li class="law-item">
+                1. #محيط_القطاع_الدائرى يساوى : طول القوس + طول القطر.
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>إذا كان طول قوس قطاع دائري هو 5 سم، وطول قطره 6 سم، فما هو محيط هذا القطاع؟</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: 11 سم (لأن محيط القطاع = طول القوس + طول القطر = 5 + 6 = 11 سم).')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                2. #مساحة_القطاع_الدائرى تساوى : ½ × طول القوس × نصف القطر. أو ( الزاوية المركزية × باي نق² ) ÷ 360
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>أي من القوانين التالية يمثل طريقة صحيحة لحساب مساحة القطاع الدائري؟</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: ½ × طول القوس × نصف القطر.')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                3. #حجم_الكرة = 4\3 باى نق³
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>الرمز (نق) في قانون حجم الكرة يرمز إلى:</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: نصف القطر (والأس 3 يعني مكعب نصف القطر).')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                4. #مساحة_السطح_المنحنى_للمخروط = باى × نق × ل. حيث ل هو الراسم.
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>ماذا يمثل الرمز (ل) في قانون مساحة السطح المنحنى للمخروط؟</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: الراسم (وهو الارتفاع الجانبي المائل للمخروط).')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                5. #مساحة_نصف_كرة_جوفاء = 2 باى نق²
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>مساحة نصف الكرة الجوفاء تساوي كم بالنسبة لمساحة الكرة الكاملة؟</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: تساوي النصف تماماً (لأن مساحة الكرة الكاملة 4 باى نق² ونصفها الجوفاء 2 باى نق²).')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                6. #مساحة_نصف_كرة_مصمتة = 3 باى نق²
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>لماذا تزيد مساحة نصف الكرة المصمتة بمقدار (باى نق²) عن الجوفاء؟</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: بسبب إضافة مساحة القاعدة الدائرية المقفلة الناتجة عن القطع.')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                7. #مساحة_الكرة = 4 باى نق²
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>إذا كان نصف قطر الكرة يساوي نق، فإن مساحتها السطحية تساوي الكلية هي:</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: 4 باى نق²')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                8. #القطعة_الدائرية هى المساحة المحصورة بين القوس والوتر.
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>المساحة المحصورة بين قوس الدائرة والوتر الواصل بين طرفيه تسمى:</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: القطعة الدائرية.')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                9. #القطاع_الدائرى هو المساحة المحصورة بين القوس ونصفى القطر.
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>المساحة التي يحدها قوس ونصفا قطرين في الدائرة تسمى بالـ:</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: القطاع الدائرى.')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                10. القطاع الدائرى والقطعة الدائرية جزء من مساحة الدائرة.
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>صح أم خطأ: القطاع الدائري والقطعة الدائرية يعتبران أجزاء من مساحة الدائرة الكلية؟</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: صح.')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                11. #القوس جزء من محيط الدائرة.
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>هل يمثل القوس جزءاً من مساحة الدائرة أم من محيط الدائرة؟</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: جزء من محيط الدائرة.')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                12. #الخط_المستقيم المرسوم بين منتصفى ضلعين فى مثلث فإنه يوازى الضلع الثالث ويساوى نصفه.
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>إذا كان طول الضلع الثالث في مثلث يساوي 10 سم، فإن طول الخط الواصل بين منتصفي الضلعين الآخرين يساوى:</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: 5 سم (لأنه يوازي الضلع الثالث ويساوي نصفه: 10 ÷ 2 = 5).')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                13. #كل_شكلين متطابقين متشابهين وليس العكس.
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>صح أم خطأ: إذا تشابه شكلان، فهل هذا يعني بالضرورة أنهما متطابقان؟</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: خطأ (التطابق يؤدي للتشابه، لكن التشابه لا يعني بالضرورة التطابق).')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                14. #الحد_الأدنى من الأرباع التى يمر بها الخط المستقيم فى المستوى الاحداثى الديكارتى هو #اتنين والحد الأقصى هو #ثلاثة أرباع.
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>ما هو أقصى عدد من الأرباع التي يمكن لخط مستقيم أحادي أن يمر بها في المستوى الديكارتي؟</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: ثلاثة أرباع.')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                15. #القطران_فى_المستطيل ليست خطوط تماثل ، ولكنهاخطوط تماثل فى #المربع_والمعين
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>الأشكال التي تعتبر أقطارها خطوط تماثل لها هي:</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: المربع والمعين (بينما المستطيل أقطاره ليست خطوط تماثل).')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                16. (س _ص)² =(ص _س)²
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>صح أم خطأ: المقدار (س - ص)² يساوي تماماً المقدار (ص - س)²؟</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: صح (لأن التربيع يلغي الإشارة السالبة الناتجة عن عكس الحدود).')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                17. #المضلع_المنتظم هو المضلع الذى تكون فيه جميع زواياه متساوية في القياس وجميع اضلاعه متساوية فى الطول.
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>ما الشرطان الأساسيان لكي يطلق على المضلع أنه مضلع منتظم؟</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: أن تكون جميع زواياه متساوية في القياس وجميع أضلاعه متساوية في الطول.')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                18. #اذا_قطع_مستقيم ضلعين فى مثلث وكان موازيا للضلع الثانى نتج عن هذا التقاطع مثلثين متشابهين وليس متطابقين.
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>المستقيم الموازي لضلع في مثلث ويقطع الضلعين الآخرين، ينتج عنه مثلثان:</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: متشابهان وليس متطابقين.')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                19. #معادلة_الخط_المستقيم هى معادلة من الدرجة الأولى فى مجهولين والصورة العامة لها هى: أ س+ب ص+ ج = 0
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>معادلة الخط المستقيم تكون من الدرجة الـ:</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: الدرجة الأولى وفي مجهولين (س ، ص).')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                20. #حل_المعادلتين الانيتين بيانيا هو نقطة تقاطع المستقيمين فى المستوى الاحداثى الديكارتى، وحل المعادلتين الانيتين #جبريا من خلال : الحذف اوالتعويض او معادلة المقادير للحصول على قيمة ( س ، ص ).
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>بيانياً، ماذا يمثل الحل المشترك لمعادلتين آنيتين في المستوى الديكارتي؟</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: نقطة تقاطع المستقيمين.')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                21. #المستقيم_يمر_بنقطة الأصل اذا كان الحد الثابت يساوى صفر.
+                <div class="example-box">مثل : ص=س او ص=_س</div>
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>متى يمر المستقيم بنقطة الأصل (0,0)؟</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: إذا كان الحد الثابت (ج) في المعادلة يساوى صفر.')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                22. #يكون_المثلثين_قائمى الزاوية متشابهين اذا تساوى فيهما وتر وضلع متناظر.
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>يتشابه مثلثان قائما الزاوية إذا تساوى فيهما:</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: وتر وضلع متناظر.')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                23. #اذا كان المستقيم يمر بالنقطة (3,5) ،، فإن معادلته عندما #يوازى محور السينات هى: ص = 5 ومعادلته عندما #يوازى محور #الصادات هى: س = 3
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>مستقيم يمر بالنقطة (3,5) ويوازي محور السينات، ما هي معادلته؟</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: ص = 5 (تأخذ قيمة الإحداثي الصادي عند موازاة محور السينات).')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                24. اي مقدار اس صفر يساوى واحد ،،،
+                <div class="example-box">مثال : س⁰ = ص⁰ = 1</div>
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>ما قيمة المقدار (100)⁰؟</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: 1 (لأن أي مقدار أس صفر يساوي واحد).')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                25. #المضلع_الذى_ليس_له أقطار هو المثلث وهو اصغر مضلع .
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>ما هو أصغر مضلع هندسي والذي يتميز بأنه لا يوجد له أي أقطار؟</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: المثلث.')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                26. #المضلع الوحيد الذى فيه عدد اضلاعه يساوى عدد اقطاره هو المضلع الخماسي.
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>المضلع الذي يمتلك 5 أضلاع و 5 أقطار هو المضلع:</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: المضلع الخماسي.')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                27. #اذا_كان_البسط معكوسا جمعيا للمقام كان هذا المقدار مساويا سالب واحد.
+                <div class="example-box">مثال : س _ ص / ص _ س = _ 1</div>
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>ما ناتج قسمة الكسر إذا كان البسط معكوساً جمعياً للمقام؟</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: سالب واحد (-1).')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                28. #قطر_المضلع هو المستقيم الواصل بين رأسين غير متتاليين.
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>الخط المستقيم الواصل بين رأسين غير متتاليين في المضلع يسمى:</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: قطر المضلع.')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                29. #يكون_للشكل_الهندسي تماثل دوراتى اذا كان من الرتبة الثانية فاكثر.
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>متى يقال أن للشكل الهندسي تماثل دوراني؟</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: إذا كانت رتبة التماثل له من الرتبة الثانية فأكثر.')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                30. القسمة على صفر تعطى كمية غير معرفة .
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>ما نتيجة عملية القسمة التالية: 5 ÷ 0؟</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: كمية غير معرفة.')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                31 . معادلة المحور السينى هى ص = 0
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>ما هي المعادلة الرياضية التي تمثل محور السينات؟</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: ص = 0')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                32. معادلة المحور الصادى هى س = 0
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>ما هي المعادلة الرياضية التي تمثل محور الصادات؟</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: س = 0')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                33. #النسبة بين مساحتى الشكلين المتشابهين تساوى مربع النسبة بين طولى ضلعين متناظرين فيهما
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>إذا كانت النسبة بين طولي ضلعين متناظرين هي 2:3، فإن النسبة بين مساحتيهما تساوي:</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: 4:9 (مربع النسبة).')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                34. النسبة بين حجمى الشكلين المتشابهين تساوى مكعب النسبة بين طولى ضلعين متناظرين فيهما
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>النسبة بين حجمي شكلين متشابهين تساوي ........... النسبة بين طولي الضلعين المتناظرين.</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: مكعب النسبة.')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                35. حجم ربع الكرة = ⅓ باى نق³
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>قانون حجم ربع الكرة يساوي:</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: ⅓ باى نق³')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                36. الاشكال التى ليس لها خطوط تماثل هى الشعاع ومتوازى الأضلاع وشبه المنحرف القائم والمثلث المختلف الأضلاع
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>اذكر شكلين هندسيين ليس لهما أي خطوط تماثل (عدد خطوط التماثل = صفر)؟</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: متوازي الأضلاع، والمثلث المختلف الأضلاع، والشعاع، وشبه المنحرف القائم.')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                37. فى المثلثات اذا تساوت الزوايا اصبح المثلثان متشابهان واذا تساوت الأضلاع اصبح المثلثان متطابقان
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>إذا تساوت أطوال أضلاع مثلثين متناظرين، فإن المثلثين يكونان:</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: متطابقان.')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                38. فى المضلع المنتظم عدد خطوط التماثل يساوى رتبة التماثل الدورانى يساوى عدد أضلاع المضلع
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>المعتاد في السداسي المنتظم، كم عدد خطوط التماثل ورتبة التماثل الدوراني له؟</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: 6 (لأنها تساوي عدد أضلاع المضلع المنتظم).')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                39. عدد المثلثات التى ينقسم إليها المضلع اذا رسمت أقطاره من أحد رؤوسه يساوى ( ن _ 2)
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>إذا كان المضلع سداسياً (ن = 6)، فإلى كم مثلث ينقسم عند رسم أقطاره من أحد رؤوسه؟</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: 4 مثلثات (لأن 6 - 2 = 4).')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                40. المضلع الذى فيه قياس زاويته الداخلة ضعف الخارجة هو السداسي
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>ما هو المضلع المنتظم الذي تكون فيه الزاوية الداخلة (120 درجة) ضعف الزاوية الخارجة (60 درجة)؟</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: المضلع السداسي.')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                41. المضلع الذى فيه قياس زاويته الخارجة ضعف الداخلة هو المثلث
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>المضلع الذي تكون فيه قياس الزاوية الخارجة ضعف قياس الزاوية الداخلة هو:</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: المثلث (المتساوي الأضلاع؛ داخلته 60 وخارجته 120).')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                42. المضلع الذى فيه مجموع قياسات الزوايا الداخلة يساوى مجموع قياسات الزوايا الخارجة هو الشكل الرباعى
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>ما هو الشكل الهندي الذي يتساوى فيه مجموع الزوايا الداخلة والخارجة ليصبح كلاهما 360 درجة؟</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: الشكل الرباعي.')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                43. حجم المخروط يساوى ⅓ حجم الأسطوانة المشترك معها فى نفس القاعدة والارتفاع
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>إذا كان حجم الأسطوانة يساوي 30 سم³، فكم يكون حجم المخروط المشترك معها في القاعدة والارتفاع؟</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: 10 سم³ (لأن 30 ÷ 3 = 10).')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                44. حجم الهرم يساوى ⅓ حجم المنشور المشترك معه في نفس القاعدة والارتفاع
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>حجم الهرم يساوي كم نسبةً إلى حجم المنشور المشترك معه في نفس القاعدة والارتفاع؟</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: الثلث (⅓).')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                45. حجم الكرة يساوى ⅔ حجم الأسطوانة المشترك معها فى نفس القاعدة والارتفاع
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>ما النسبة بين حجم الكرة وحجم الأسطوانة المشتركة معها في القاعدة والارتفاع؟</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: الثلثين (⅔).')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                46. راسم المخروط هو الارتفاع الجانبي المائل ويستخدم في إيجاد مساحة السطح المنحنى للمخروط ( ل )
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>في ماذا نستخدم طول راسم المخروط (ل) في الهندسة؟</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: يستخدم في إيجاد مساحة السطح المنحنى للمخروط.')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                47. ليست جميع المستطيلات متشابهة
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>صح أم خطأ: جميع المستطيلات في الهندسة متشابهة دائماً؟</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: خطأ (ليست جميعها متشابهة لأن النسبة بين أبعادها قد تختلف).')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                48. جميع المضلعات المنتظمة متشابهة دائما مثل المربع والمثلث المتساوى الأضلاع والخماسي المنتظم
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>اذكر أمثلة لمضلعات منتظمة تكون متشابهة دائماً؟</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: المربع، المثلث المتساوي الأضلاع، والخماسي المنتظم.')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                49. مساحة نصف الورقة = 2\7 نق²
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>قانون مساحة نصف الورقة يساوي:</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: 2\7 نق²')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                50. طول القوس يساوى: <br>🔺 ( ثيتا \ 360 ) × 2باى نق <br>🔺 ( ثيتا \ 360 ) × محيط الدائرة <br>🔺 ( ثيتا \ 180 ) × باى نق
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>إذا استخدمنا الصيغة المقسمة على 180، فبماذا نضربها لإيجاد طول القوس؟</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: نضربها في (باى نق).')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                51. قاعدة الهرم مضلع بينما قاعدة المخروط دائرة.
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>ما الفرق الأساسي بين شكل قاعدة الهرم وشكل قاعدة المخروط؟</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: قاعدة الهرم تكون مضلعاً، بينما قاعدة المخروط تكون دائرة.')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                52. عدد خطوط التماثل للطائرة الورقية والمثلث المتساوى الساقين واحد.
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>كم عدد خطوط التماثل لشكل الطائرة الورقية؟</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: خط تماثل واحد (1).')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                53. مجموع قياسات الزوايا الخارجة لأى مضلع = 360
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>ما هو مجموع قياسات الزوايا الخارجة للمضلع الخماسي؟</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: 360 درجة ثابتة لأي مضلع.')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                54. التحليل هو كتابة المقادير الجبرية كحاصل ضرب لعواملها الاولية.
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>ما المقصود بعملية التحليل في الجبر؟</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: هي كتابة المقادير الجبرية كحاصل ضرب لعواملها الأولية.')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                55. يتطابق الشكلان اذا كان لهما نفس الشكل والمساحة.
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>لكي يتطابق شكلان هندسيان تماماً، يجب أن يتساويا في:</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: نفس الشكل ونفس المساحة.')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                56. يتشابه الشكلان اذا كان لهما نفس الشكل ولكن مختلفان فى المساحة او الحجم.
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>إذا كان لشكلين نفس المظهر الخارجي ولكنهما مختلفان في المساحة، فما العلاقة بينهما؟</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: علاقة تشابه.')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+            <li class="law-item">
+                57. عدد اضلاع المضلع تساوى مجموع قياسات الزوايا الداخلة \ 180 + 2
+                <div class="quiz-box">
+                    <div class="quiz-title">❓ سؤال اختبر نفسك:</div>
+                    <p>ما هو القانون المستخدم لحساب عدد أطراف وأضلاع أي مضلع بمعلومية مجموع زواياه الداخلة؟</p>
+                    <div class="quiz-options">
+                        <button class="quiz-btn" onclick="showAns(this, '✅ الإجابة الصحيحة: عدد الأضلاع = (مجموع قياسات الزوايا الداخلة ÷ 180) + 2')">اضغط لإظهار الإجابة الصحيحة والتصحيح</button>
+                    </div>
+                    <div class="answer-box"></div>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+
+    <footer>
+        <p>تمت مراجعة وتنظيم هذا المشروع بواسطة المطور: <strong>يامن</strong></p>
+        <p>كل الأمنيات بالتفوق والنجاح الكامل في الامتحانات النهائية! 🎯</p>
+    </footer>
+
+    <script>
+        function showAns(btn, txt) {
+            const quizBox = btn.parentElement.parentElement;
+            const ansBox = quizBox.querySelector('.answer-box');
+            ansBox.style.display = 'block';
+            ansBox.style.backgroundColor = '#d1fae5';
+            ansBox.style.color = '#065f46';
+            ansBox.innerText = txt;
+            btn.disabled = true;
+            btn.style.opacity = '0.6';
+            btn.style.cursor = 'default';
+        }
+    </script>
+</body>
+</html>
